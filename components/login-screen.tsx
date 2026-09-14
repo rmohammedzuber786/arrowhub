@@ -3,6 +3,7 @@
 import type React from 'react'
 import { useState } from 'react'
 import Image from 'next/image'
+import { Eye, EyeOff } from 'lucide-react'
 
 export function LoginScreen({
   onLogin,
@@ -11,7 +12,9 @@ export function LoginScreen({
 }) {
   const [username, setUsername] = useState('')
   const [password, setPassword] = useState('')
+  const [showPassword, setShowPassword] = useState(false)
   const [error, setError] = useState('')
+  const [showHint, setShowHint] = useState(false)
 
   function handleSubmit(e: React.FormEvent) {
     e.preventDefault()
